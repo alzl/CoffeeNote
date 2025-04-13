@@ -1,0 +1,70 @@
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:security="http://www.springframework.org/schema/security"
+    xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.6.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Spring Security Configuration -->
+    <!-- login/security/SecurityConfig.java 에서 관리중이므로 사실상 필요 없음 -->
+    <security:http auto-config="true" use-expressions="true">
+        <!-- 리소스 파일에 대한 접근 허용 -->
+        <!-- 
+        <security:intercept-url pattern="/resources/**" access="permitAll"/>
+         -->
+        <!-- 비로그인 사용자가 접근할 수 있는 경로 -->
+        <!--  
+        <security:intercept-url pattern="/" access="permitAll"/>
+        <security:intercept-url pattern="/login/login" access="permitAll"/>
+        <security:intercept-url pattern="/login/register" access="permitAll"/>
+        -->
+        <!-- 사용자 권한에 따른 접근 제어 -->
+        <!-- 
+        <security:intercept-url pattern="/user/**" access="hasAnyRole('USER', 'ADMIN', 'BUSINESS')"/>
+        <security:intercept-url pattern="/login/admin" access="hasRole('ADMIN')"/>
+        -->
+        <!-- Form Login Configuration -->
+        <!-- 
+        <security:form-login login-page="/login/login"
+            default-target-url="/login/home"
+            authentication-failure-url="/login/login-error"
+            username-parameter="username" 
+            password-parameter="password"/>
+        -->
+        <!-- Logout Configuration -->
+        <!-- 
+        <security:logout 
+            logout-url="/login/logout"
+            logout-success-url="/login/login"
+            invalidate-session="true"/>
+         -->
+        <!-- Access Denied Handler -->
+        <!-- 
+        <security:access-denied-handler ref="customAccessDeniedHandler"/>
+ 		-->
+        <!-- Ensure CSRF is enabled -->
+        <security:csrf/>
+    </security:http>
+	
+	<!-- 대신에 bean 등은 xml로 안해두면 뭔가 자꾸 참조오류가 나서 그냥 xml로 해둠 -->
+    <!-- Authentication Manager -->
+    <security:authentication-manager>
+        <security:authentication-provider user-service-ref="customUserDetailsService">
+            <security:password-encoder ref="passwordEncoder"/>
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+	<!-- JdbcTemplate -->
+    <beans:bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <beans:constructor-arg ref="datasource"/>
+    </beans:bean>
+	
+    <!-- PasswordEncoder bean 정의 -->
+    <beans:bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+
+    <!-- AccessDeniedHandler 정의 -->
+    <beans:bean id="customAccessDeniedHandler" class="login.security.CustomAccessDeniedHandler"/>
+	
+	 <!-- CustomUserDetailsService bean 정의 -->
+	<beans:bean id="customUserDetailsService" class="login.security.CustomUserDetailsService"/>
+	
+</beans:beans>

@@ -1,0 +1,150 @@
+/* 헤더 영역 타이틀 폰트 지정 */
+@font-face {
+    font-family: 'TitleFont';
+    src: url('/fonts/title.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 헤더 이외의 전체 영역 폰트 지정 */
+@font-face {
+    font-family: 'TextFont';
+    src: url('/fonts/text.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 로그인 제목 스타일 */
+#login-title {
+    font-size: 40px; /* 제목의 크기 조정 */
+    font-weight: bold; /* 제목을 굵게 */
+    margin-bottom: 20px; /* 제목과 폼 사이의 간격 조정 */
+    text-align: left; /* 제목을 왼쪽 정렬 */
+    font-family: 'TextFont', sans-serif; /* 텍스트에 폰트 적용 */
+    color: #4A3B2C;
+}
+
+/* 로그인 컨테이너 스타일 */
+.login-container {
+    padding: 30px; 
+    width: 100%; /* 로그인 컨테이너의 너비를 부모 요소의 100%로 설정합니다. */
+    max-width: 500px; /* 로그인 컨테이너의 최대 너비를 450px로 설정합니다. */
+    min-height: 400px; /* 로그인 컨테이너의 최소 높이를 400px로 설정합니다. */
+    display: flex; /* Flexbox 레이아웃을 사용하여 자식 요소들을 정렬합니다. */
+    flex-direction: column; /* 자식 요소들을 세로 방향으로 배치합니다. */
+    justify-content: center; /* 자식 요소들을 세로 방향으로 중앙 정렬합니다. */
+    text-align: center; /* 로그인 컨테이너 내부의 텍스트를 중앙 정렬합니다. */
+    position: relative; /* 자식 요소(에러 메시지 등)를 상대적으로 배치할 수 있도록 설정합니다. */
+    background-color: #f5f2e6; /* 배경색을 흰색으로 설정 */
+    border: 1px solid #ddd; /* 연한 회색 테두리 */
+    border-radius: 10px; /* 컨테이너의 꼭짓점을 둥글게 설정 */
+    font-family: 'TextFont', sans-serif; /* 텍스트에 폰트 적용 */
+}
+
+/* 입력 그룹 스타일 */
+.login-input-group {
+    margin-bottom: 30px; 
+    position: relative; /* 에러 메시지 위치를 상대적으로 조정할 수 있도록 설정합니다. */
+}
+
+/* 입력 필드 스타일 */
+.login-input-group input {
+    width: calc(100% - 24px); /* 입력 필드의 너비를 부모 요소의 100%에서 패딩을 제외한 값으로 설정합니다. */
+    padding: 12px; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    font-size: 16px; 
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* 입력 필드의 내부 그림자를 설정합니다. */
+    transition: border-color 0.3s ease; /* 입력 필드의 테두리 색상이 변경될 때 부드럽게 전환됩니다. */
+}
+
+/* 입력 필드가 포커스될 때 스타일 */
+.login-input-group input:focus {
+    border-color: #4a3b2c; /* 포커스 시 입력 필드의 테두리 색상을 어두운 갈색으로 변경합니다. */
+    outline: none; /* 포커스 시 입력 필드에 기본적인 윤곽선(outline)을 제거합니다. */
+}
+
+/* 에러 메시지 스타일 */
+.login-error-message {
+    display: none; /* 기본적으로 에러 메시지를 숨깁니다. */
+    color: red; /* 에러 메시지의 텍스트 색상을 빨간색으로 설정합니다. */
+    font-size: 12px; 
+    margin-top: 5px; 
+}
+
+/* 체크박스 그룹 스타일 */
+.login-checkbox-group {
+    display: flex; /* Flexbox 레이아웃을 사용하여 체크박스와 레이블을 정렬합니다. */
+    align-items: center; /* 체크박스와 레이블을 세로 방향으로 중앙 정렬합니다. */
+    margin-bottom: 15px; 
+}
+
+/* 체크박스 스타일 */
+.login-checkbox-group input {
+    margin-right: 8px; 
+}
+
+/* 체크박스 레이블 스타일 */
+.login-checkbox-group label {
+    font-size: 16px; 
+    color: #4a3b2c; 
+}
+
+/* 로그인 버튼 스타일 */
+#login-button {
+    width: 100%; /* 로그인 버튼의 너비를 부모 요소의 100%로 설정합니다. */
+    margin-bottom: 10px; /* 로그인 버튼의 하단 여백을 10px로 설정합니다. */
+    border-radius: 10px; /* 로그인 버튼의 모서리를 둥글게 설정합니다. */
+    padding: 10px;
+    font-size: 20px;
+    color: #4A3B2C;
+    background-color: #d4b894;
+    cursor: pointer; 
+    transition: background-color 0.5s ease; /* 버튼의 배경 색상이 변경될 때 부드럽게 전환됩니다. */
+    font-family: 'TextFont', sans-serif; /* 텍스트에 폰트 적용 */
+    border: none;
+}
+
+/* 로그인 버튼의 호버 상태 스타일 */
+#login-button:hover {
+    background-color: #d3ae7d; /* 호버 시 로그인 버튼의 배경 색상을 더 어두운 갈색으로 변경 */
+}
+
+/* 기타 링크 영역 스타일 */
+.login-footer {
+    margin-top: 20px; 
+    text-align: center; 
+}
+
+/* 기타 링크 링크 스타일 */
+.login-footer button {
+    font-size: 18px;
+    background: none;
+    color: #4A3B2C; 
+    text-decoration: none;
+    margin: 0 10px; 
+}
+
+/* 기타 링크의 hover 상태 스타일 */
+.login-footer button:hover {
+    text-decoration: underline; /* 링크의 텍스트 밑줄을 추가합니다. */
+}
+
+/* 기타 링크의 a 스타일 */
+.login-footer a {
+    font-size: 16px; /* 링크의 글씨 크기 설정 */
+    color: #4A3B2C; /* 기본 텍스트 색상 */
+    text-decoration: none; /* 기본적으로 밑줄 제거 */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* 색상과 밑줄 전환 애니메이션 */
+    margin: 0 10px; /* 좌우 간격 설정 */
+}
+/* 기타 링크의 hover 상태 스타일 */
+.login-footer a:hover {
+    color: #d4b894; /* 마우스 오버 시 색상 변경 */
+    text-decoration: underline; /* 마우스 오버 시 밑줄 추가 */
+}
+/*이거는 그 | 짝대기*/
+.login-separator {
+    margin: 0 10px;
+    color: #4A3B2C; /* 구분자 색상 */
+    pointer-events: none; /* 마우스 이벤트를 비활성화하여 hover 등의 변화가 생기지 않도록 함 */
+}

@@ -1,0 +1,151 @@
+@charset "UTF-8";
+/* 공지사항 제목 스타일 수정 */
+#notice-title {
+    font-family: 'TextFont', Arial, sans-serif; 
+    font-size: 2.7em; /* 글씨 크기 증가 */
+    text-align: left; /* 왼쪽 정렬 */
+    margin: 10px 20px 50px 20px; /* 위쪽 여백을 줄이고, 아래쪽 여백 추가 */
+    color: #4a3b2c; /* 제목 글씨색 */
+}
+
+/* 컨테이너 스타일 */
+#notice-container {
+    width: calc(100% - 40px); /* 양옆에 20px 여백을 두기 위해 100%에서 40px을 뺀 너비 */
+    height: calc(100% - 40px); /* 위아래에 20px 여백을 두기 위해 100%에서 40px을 뺀 높이 */
+    margin: 20px; /* 모든 방향에 20px 여백 추가 */
+    padding: 20px; /* 안쪽 여백 20px */
+    background-color: #f5f2e6; /* 배경색을 흰색으로 설정 */
+    border: 1px solid #ddd; /* 연한 회색 테두리 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 가벼운 그림자 효과 */
+    border-radius: 10px; /* 컨테이너의 꼭짓점을 둥글게 설정 */
+    box-sizing: border-box; /* 박스 크기를 패딩 및 테두리를 포함한 크기로 설정 */
+    display: flex; /* 플렉스 박스 레이아웃 사용 */
+    flex-direction: column; /* 자식 요소들을 수직으로 배치 */
+}
+
+/* 공지사항 작성 버튼 */
+#notice-write { 
+    background-color: #6a4f3b;
+    color: #f5f2e6;
+    border: 1px solid #d4b894; /* 변경할 테두리 색상 */
+    border-radius: 6px; /* 테두리 둥글게 */
+    font-family: 'TextFont', Arial, sans-serif; /* 폰트 설정 */
+    cursor: pointer; /* 커서 포인터로 변경 */
+    padding: 10px 20px;
+    margin-top: auto; /* 컨테이너 내부에서 아래쪽에 배치 */
+    margin-left: auto; /* 오른쪽 정렬을 위해 왼쪽 자동 여백 */
+    margin-bottom: 20px; /* 아래쪽 여백 */
+    transition: background-color 0.3s ease; /* 배경색 전환 효과 */
+    text-decoration: none; /* 밑줄 제거 */
+    font-size: 1.3em; /* 폰트 크기 설정 */
+    
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: center; /* 가로 가운데 정렬 */
+}
+
+/* 버튼 호버 시 배경색 변경 */
+#notice-write:hover { 
+    background-color: #846048; /* 호버 시 배경색 */
+}
+
+/* 공지사항 삭제 버튼 */
+#notice-delete-button {
+    background-color: #ff4d4d; /* 배경색 빨간색 */
+    color: white; /* 글씨색 흰색 */
+    border: none; /* 테두리 제거 */
+    border-radius: 5px; /* 둥글게 */
+    padding: 10px 15px; /* 여백 추가 */
+    font-family: 'TextFont', Arial, sans-serif; /* 폰트 설정 */
+    font-size: 1.2em; /* 글씨 크기 설정 */
+    cursor: pointer; /* 커서 포인터로 변경 */
+    transition: background-color 0.3s; /* 배경색 전환 효과 */
+}
+
+
+/* 공지사항 테이블 스타일 설정 */
+notice-table {
+    width: 100%; /* 테이블 너비를 100%로 설정 */
+    margin: 40px; /* 위쪽 여백을 추가 */
+    border-collapse: collapse; /* 테이블 셀 경계 합치기 */
+    table-layout: fixed; /* 테이블 너비가 고정되도록 설정 */
+    font-family: 'TextFont', Arial, sans-serif; 
+    color: #4a3b2c; /* 제목 글씨색 */
+    font-size: 25px;
+}
+
+th, td {
+    border: 1px solid #4a3b2c; /* 셀 테두리 색상 */
+    padding: 5px; /* 셀 내부 여백 */
+    text-align: center; /* 셀 내용 중앙 정렬 */
+}
+
+th {
+    background-color: #6a4f3b; /* 헤더 배경색 */
+    color: #f5f2e6; /* 헤더 글씨색 */
+}
+
+/* 각 열의 너비 설정 */
+th:nth-child(1), td:nth-child(1) {
+    width: 5%; /* 첫 번째 열 너비 */
+    font-size: 1.3em; /* 글씨 크기 설정 (예시) */
+}
+
+th:nth-child(2), td:nth-child(2) {
+    width: 65%; /* 두 번째 열 너비 (제목) */
+    text-align: left; /* 왼쪽 정렬 */
+    font-size: 1.3em; /* 글씨 크기 설정 (예시) */
+    padding-left: 10px; /* 왼쪽 여백 추가 */
+}
+
+/* 두 번째 열의 링크 스타일 (밑줄 제거 및 글씨색 안보이게) */
+td:nth-child(2) a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 상위 요소의 색상과 동일하게 설정하여 글씨색이 보이지 않도록 */
+}
+
+/* 링크에 마우스를 올렸을 때 스타일 유지 (변경된 글씨색 및 밑줄 없이) */
+td:nth-child(2) a:hover {
+    color: #d4b894; /* 마우스 오버 시 색상 변경 */
+    text-decoration: underline; /* 마우스 오버 시 밑줄 추가 */
+}
+
+th:nth-child(3), td:nth-child(3) {
+    width: 30%; /* 세 번째 열 너비 (작성자) */
+    text-align: left; /* 왼쪽 정렬 */
+    font-size: 1.3em; /* 글씨 크기 설정 (예시) */
+    padding-left: 10px; /* 왼쪽 여백 추가 */
+}
+
+/* 페이지네이션 스타일 */
+.pagination {
+    text-align: center; /* 페이지네이션 중앙 정렬 */
+    margin-top: 20px; /* 페이지네이션 위쪽 여백 */
+}
+
+/* 페이지네이션 링크 스타일 */
+.pagination a {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    color: #4a3b2c; /* 링크 텍스트 색상 */
+    padding: 8px 12px; /* 링크 내부 여백 (상하 8px, 좌우 12px) */
+    margin: 0 4px; /* 링크 간 간격 (좌우 4px) */
+    border: 1px solid #4a3b2c; /* 링크 테두리 색상 */
+    border-radius: 5px; /* 링크 테두리 둥글게 */
+    font-family: 'TextFont', Arial, sans-serif; /* 폰트 설정 */
+    font-size: 14px; /* 폰트 크기 */
+    transition: background-color 0.3s, color 0.3s; /* 배경색과 글씨색 전환 효과 */
+    display: inline-block; /* 인라인 블록으로 요소 간 간격 조정 */
+}
+
+/* 활성화된 페이지 스타일 */
+.pagination a.active {
+    background-color: #6a4f3b; /* 활성화된 페이지 배경색 */
+    color: #f5f2e6; /* 활성화된 페이지 글씨색 */
+    pointer-events: none; /* 클릭 불가능 */
+}
+
+/* 비활성화된 페이지 링크에 마우스를 올렸을 때 색상 변경 */
+.pagination a:hover {
+    background-color: #d9d0c6; /* 호버 시 배경색 */
+    color: #4a3b2c; /* 호버 시 글씨색 */
+}

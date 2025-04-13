@@ -1,0 +1,242 @@
+@charset "UTF-8";
+
+/* 헤더 영역 타이틀 폰트 지정 */
+@font-face {
+    font-family: 'TitleFont';
+    src: url('/fonts/title.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 헤더 이외의 전체 영역 폰트 지정 */
+@font-face {
+    font-family: 'TextFont';
+    src: url('/fonts/text.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#checkbutton{
+	font-family: 'TextFont';
+    src: url('/fonts/text.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.signUp-container {
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    background-color: #f5f2e6;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'TextFont', sans-serif;
+}
+
+/* 제목 스타일 */
+#signUp-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #4A3B2C;
+    margin-bottom: 40px;
+}
+
+/* 입력 필드 그룹 */
+.signUp-container div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    width: 100%;
+    align-items: center; /* 세로 가운데 정렬 */
+}
+
+/* 라벨 */
+.signUp-container label {
+    width: 120px; /* 라벨의 고정 너비 설정 */
+    text-align: left;
+    padding-right: 10px;
+    font-size: 14px;
+    color: #4A3B2C;
+}
+
+/* 입력 필드 스타일 */
+.signUp-container input[type="text"],
+.signUp-container input[type="password"],
+.signUp-container input[type="email"] {
+    flex: 1; /* 입력 필드가 남은 공간을 차지하도록 설정 */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-left: 10px; /* 라벨과의 간격 */
+}
+
+
+.signUp-container button {
+    align-self: flex-start; /* 버튼을 왼쪽 정렬 */
+    padding: 10px 20px;
+    background-color: #d4b894;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#checkDuplicateId, #checkDuplicateEmail {
+	margin-left: 10px;
+	margin-top: 4px;
+}
+
+.signUp-container button:hover {
+    background-color: #d3ae7d;
+}
+
+/* 에러 및 성공 메시지 스타일 */
+.error-message,
+.success-message {
+    font-size: 12px;
+}
+.error-message{
+	color:red;
+}
+.success-message {
+	color:green;
+}
+
+
+/* 프로필 이미지 스타일 */
+.signUp-container img.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+}
+
+/* 회원가입 버튼 */
+.signUp-container input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #d4b894;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.signUp-container input[type="submit"]:hover {
+    background-color: #d3ae7d;
+}
+
+/*0925 다시 변경한 프로필 변경 모달 스타일 */
+#profileModal {
+ display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    /* 전체 화면을 뜻함 */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 실제 프로필 변경 모달의 스타일들 */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 500px;
+    min-height: 200px;
+    position: relative; /* 추가 */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 수평 중앙 정렬 */
+}
+
+/* 닫기 버튼 스타일 */
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+
+    position: absolute; /* 위치를 절대 위치로 변경 */
+    top: 10px;
+    right: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: #4a3b2c;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 제목 스타일 */
+.modal-content h2 {
+    text-align: center;
+    margin-top: 20px; /* 닫기 버튼과의 간격 조정 */
+    margin-bottom: 20px;
+}
+
+
+#changeProfile{
+	padding: 30px 30px;
+    background-color: #d4b894;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 50px; /* 버튼 주변의 여백 */
+}
+	
+/* 프로필 옵션 스타일 */
+.profile-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 내부 이미지들을 중앙 정렬 */
+}
+
+.profile-options img {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#selectedProfileImg {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* 이미지 선택 시 확대 및 강조 효과 */
+.profile-options img:hover {
+    transform: scale(1.1); /* 살짝 확대 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 강조 */
+}
+
+/* 기타 링크의 스타일 */
+#login-link {
+    font-size: 16px; /* 링크의 글씨 크기 설정 */
+    color: #4A3B2C; /* 기본 텍스트 색상 */
+    text-decoration: none; /* 기본적으로 밑줄 제거 */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* 색상과 밑줄 전환 애니메이션 */
+    margin: 0 10px; /* 좌우 간격 설정 */
+}
+
+/* 기타 링크의 hover 상태 스타일 */
+#login-link:hover {
+    color: #d4b894; /* 마우스 오버 시 색상 변경 */
+    text-decoration: underline; /* 마우스 오버 시 밑줄 추가 */
+}

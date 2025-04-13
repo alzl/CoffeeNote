@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+/* 폰트 지정 */
+@font-face {
+    font-family: 'TextFont';
+    src: url('/fonts/text.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 입점안내 제목 스타일 수정 */
+#storeGuide-title {
+    font-family: 'TextFont', Arial, sans-serif; 
+    font-size: 2.7em; /* 글씨 크기 증가 */
+    text-align: left; /* 왼쪽 정렬 */
+    margin: 10px 20px 20px 20px; /* 위쪽 여백을 줄이고, 아래쪽 여백 추가 */
+    color: #4a3b2c; /* 제목 글씨색 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* 텍스트에 그림자 추가하여 가독성 향상 */
+}
+
+/* 컨테이너 스타일 */
+#storeGuide-container {
+    width: calc(100% - 40px); /* 양옆에 20px 여백을 두기 위해 100%에서 40px을 뺀 너비 */
+    height: calc(100% - 40px); /* 위아래에 20px 여백을 두기 위해 100%에서 40px을 뺀 높이 */
+    margin: 20px; /* 모든 방향에 20px 여백 추가 */
+    padding: 20px; /* 안쪽 여백 20px */
+    background-color: #f5f2e6; /* 배경색을 흰색으로 설정 */
+    border: 1px solid #ddd; /* 연한 회색 테두리 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 가벼운 그림자 효과 */
+    border-radius: 10px; /* 컨테이너의 꼭짓점을 둥글게 설정 */
+    box-sizing: border-box; /* 박스 크기를 패딩 및 테두리를 포함한 크기로 설정 */
+    display: flex; /* 플렉스 박스 레이아웃 사용 */
+    flex-direction: column; /* 자식 요소들을 수직으로 배치 */
+    overflow: auto; /* 오버플로우가 생기면 스크롤바 추가 */
+}
+
+/* 각 섹션 제목 스타일 */
+.storeGuide-content-title {
+    font-family: 'TextFont', Arial, sans-serif; /* 제목 글꼴 설정 */
+    font-size: 1.6em; /* 제목 크기 설정 */
+    font-weight: bold; /* 제목 굵게 설정 */
+    margin-top: 20px; /* 위쪽 여백 추가 */
+    margin-bottom: 10px; /* 아래쪽 여백 추가 */
+    color: #4a3b2c; /* 제목 글씨색 */
+    border-bottom: 2px solid #ddd; /* 제목 아래에 연한 회색 선 추가 */
+    padding-bottom: 10px; /* 제목 아래 여백 추가 */
+}
+
+/* 콘텐츠 영역 스타일 */
+#storeGuide-content {
+    font-family: 'TextFont', Arial, sans-serif; /* 콘텐츠 글꼴 */
+    font-size: 1.2em; /* 폰트 크기 증가 */
+    color: #444; /* 콘텐츠 텍스트 색상 (어두운 회색으로 가독성 향상) */
+    line-height: 1.8; /* 줄 간격을 넓혀 가독성 향상 */
+    overflow: auto; /* 콘텐츠가 넘칠 때 스크롤바가 생기도록 설정 */
+    margin-top: 10px; /* 콘텐츠 상단 여백 추가 */
+}
+
+/* ul 목록 스타일 수정 */
+#storeGuide-content ul {
+    list-style-type: disc; /* 목록 스타일을 디스크로 설정 */
+    margin: 0; /* 위아래 여백 제거 */
+    padding-left: 20px; /* 왼쪽 패딩 추가 */
+}
+
+/* ul 목록 아이템 스타일 수정 */
+#storeGuide-content ul li {
+    margin-bottom: 15px; /* 아이템 간의 여백 추가 */
+    color: #555; /* 목록 아이템 텍스트 색상 (중간 회색) */
+}
+
+/* 강조된 문구 스타일 */
+#storeGuide-content .highlight {
+    font-family: 'TextFont', Arial, sans-serif; /* 강조된 문구의 글꼴 설정 */
+    font-size: 1.4em; /* 강조된 문구의 글씨 크기 */
+    font-weight: bold; /* 글씨를 굵게 설정 */
+    color: #2A2318; /* 강조 색상 (제목과 일치하는 색상) */
+    background-color: #fff; /* 배경색 (지정된 색상) */
+    padding: 15px; /* 텍스트 주변에 여백 추가 */
+    border-radius: 5px; /* 텍스트 배경의 둥근 모서리 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 약간의 그림자 효과 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    display: block; /* 블록 요소로 설정하여 텍스트가 독립적으로 보이도록 */
+    margin-top: 20px; /* 위쪽 여백 추가 */
+    margin-bottom: 20px; /* 아래쪽 여백 추가 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* 텍스트에 그림자 추가하여 가독성 향상 */
+    width: 100%; /* 버튼의 가로 길이를 100%로 설정 */
+    box-sizing: border-box; /* padding과 함께 크기 조정 */
+}
+
+/* 강조된 문구 내의 링크 스타일 */
+#storeGuide-content .highlight {
+    color: #2A2318; /* 링크 색상 설정 (예: 짙은 갈색) */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+#storeGuide-content .highlight:hover {
+    color: #785a44; /* 마우스를 올렸을 때의 색상 (예: 연한 갈색) */
+    text-decoration: underline; /* 마우스를 올렸을 때 밑줄 표시 */
+    cursor: pointer;
+}

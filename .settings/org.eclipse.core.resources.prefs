@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//src/main/java/login/controller/CN_LoginController.java=UTF-8
+encoding//src/main/java/login/controller/CN_UserController.java=UTF-8
+encoding//src/main/java/login/model/CN_User.java=UTF-8
+encoding//src/main/java/login/security/SecurityConfig.java=UTF-8
+encoding//src/main/webapp/WEB-INF/views/main/a.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/main/b.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/main/error.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/main/home.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/main/index.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/test/testcafe.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/test/testmap.jsp=UTF-8

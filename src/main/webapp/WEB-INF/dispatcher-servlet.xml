@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+    <!-- Enable annotation-driven MVC -->
+    <mvc:annotation-driven>
+    </mvc:annotation-driven>
+	
+	<!-- 리소스 파일 처리하기 -->
+	<mvc:resources location="/resources/" mapping="/**"/>
+	
+	<!-- CommonsMultipartResolver 설정 추가 -->
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="5242880"/> <!-- 최대 업로드 파일 크기 설정 (5MB) -->
+    </bean>
+
+    <!-- Scan for controllers in the specified package -->
+    <context:component-scan base-package="advertising.**" />
+	<context:component-scan base-package="advertisingimage.**" />
+	<context:component-scan base-package="bookmark.**" />
+	<context:component-scan base-package="bookmarkcafes.**" />
+	<context:component-scan base-package="bookmarklikes.**" />
+	<context:component-scan base-package="cafe.**" />
+    <context:component-scan base-package="login.**" />
+    <context:component-scan base-package="main.**" />   
+    <context:component-scan base-package="notice.**" />
+    <context:component-scan base-package="registeredcafes.**" />
+    <context:component-scan base-package="review.**" />
+    <context:component-scan base-package="reviewimage.**" />
+    <context:component-scan base-package="reviewlikes.**" />
+    <context:component-scan base-package="test.**" />
+
+    <!-- View Resolver -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+
+	<!-- JSON Message Converter -->
+    <bean id="jsonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+	
+    <!-- Include other Spring configurations if necessary -->
+    <import resource="spring-database.xml"/>
+    <!-- If you had other beans related to Spring MVC, include here or remove unnecessary beans from spring-mvc-config.xml -->
+	<!-- 일반 객체는 여기서 빈생성 -->
+	
+</beans>

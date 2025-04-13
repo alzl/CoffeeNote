@@ -1,0 +1,495 @@
+@charset "UTF-8";
+
+/* 헤더 영역 타이틀 폰트 지정 */
+@font-face {
+    font-family: 'TitleFont';
+    src: url('/fonts/title.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 헤더 이외의 전체 영역 폰트 지정 */
+@font-face {
+    font-family: 'TextFont';
+    src: url('/fonts/text.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 마이페이지 컨테이너 스타일 */
+#mypage-container {
+    width: calc(100% - 40px); /* 양옆에 20px 여백을 두기 위해 100%에서 40px을 뺀 너비 */
+    height: calc(100% - 40px); /* 위아래에 20px 여백을 두기 위해 100%에서 40px을 뺀 높이 */
+    margin: 20px auto; /* 모든 방향에 20px 여백 추가 */
+    padding: 20px; /* 안쪽 여백 20px */
+    background-color: #f5f2e6; /* 배경색을 흰색으로 설정 */
+    border: 1px solid #ddd; /* 연한 회색 테두리 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 가벼운 그림자 효과 */
+    border-radius: 10px; /* 컨테이너의 꼭짓점을 둥글게 설정 */
+    box-sizing: border-box; /* 박스 크기를 패딩 및 테두리를 포함한 크기로 설정 */
+    display: flex; /* 플렉스 박스 레이아웃 사용 */
+    flex-direction: column; /* 자식 요소들을 수직으로 배치 */
+	overflow-y: auto; /* 세로 스크롤 */
+	color: #4a3b2c; /* 제목 글씨 색상 설정 */
+	font-size: 22px;
+	justify-content: flex-start; /* 스크롤이 가능하도록 상단 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+
+/* 로그인 제목 스타일 */
+#mypage-title {
+    font-size: 60px; /* 제목의 크기 조정 */
+    font-weight: bold; /* 제목을 굵게 */
+    margin-bottom: 20px; /* 제목과 폼 사이의 간격 조정 */
+    text-align: left; /* 제목을 왼쪽 정렬 */
+    font-family: 'TextFont', sans-serif; /* 텍스트에 폰트 적용 */
+    color: #4A3B2C;
+}
+
+	#dropdown-content{
+		display: none;
+		margin-top: 20px;
+	}
+	
+	.mypage-btncss{
+	    margin-left: 10px; /* 왼쪽 여백 설정 */
+	    background-color: #ff4d4d; /* 배경색 빨간색 */
+  		border: none; /* 테두리 제거 */
+	    padding: 6px 10px; /* 패딩 설정 */
+	    border-radius: 10px; /* 버튼 모서리를 둥글게 설정 */
+	    font-size: 22px; /* 글씨 크기 설정 */
+	    cursor: pointer; /* 마우스를 올렸을 때 커서 모양 변경 */
+	    transition: background-color 0.3s; /* 배경색 전환 효과 설정 */
+	    margin-top:5px;
+   		color: white; /* 글씨색 흰색 */
+	}
+	
+	.mypage-btncss2{
+	    margin-left: 10px; /* 왼쪽 여백 설정 */
+   		background-color: #6a4f3b;	    
+   		border: none; /* 테두리 제거 */
+	    padding: 6px 10px; /* 패딩 설정 */
+	    border-radius: 10px; /* 버튼 모서리를 둥글게 설정 */
+	    font-size: 22px; /* 글씨 크기 설정 */
+	    cursor: pointer; /* 마우스를 올렸을 때 커서 모양 변경 */
+	    transition: background-color 0.3s; /* 배경색 전환 효과 설정 */
+	    margin-top:5px;
+	    width: 20%;
+	    color: #f5f2e6;
+	}
+	
+	.mypage-btncss2:hover{
+		background-color: #846048;
+	}
+	
+	.mypage-btncss3{
+	    margin-left: 10px; /* 왼쪽 여백 설정 */
+   		background-color: #6a4f3b;	    
+   		border: none; /* 테두리 제거 */
+	    padding: 6px 10px; /* 패딩 설정 */
+	    border-radius: 10px; /* 버튼 모서리를 둥글게 설정 */
+	    font-size: 20px; /* 글씨 크기 설정 */
+	    cursor: pointer; /* 마우스를 올렸을 때 커서 모양 변경 */
+	    transition: background-color 0.3s; /* 배경색 전환 효과 설정 */
+	    margin-top:5px;
+	    width: 20%;
+	    color: #f5f2e6;
+	}
+		
+	.mypage-btncss4{
+   		background-color: #6a4f3b;	    
+   		border: none; /* 테두리 제거 */
+	    padding: 6px 10px; /* 패딩 설정 */
+	    border-radius: 10px; /* 버튼 모서리를 둥글게 설정 */
+	    font-size: 22px; /* 글씨 크기 설정 */
+	    cursor: pointer; /* 마우스를 올렸을 때 커서 모양 변경 */
+	    transition: background-color 0.3s; /* 배경색 전환 효과 설정 */
+	    width: 20%;
+	    color: #f5f2e6;
+	}
+	
+	.mypage-btncss5{
+	    margin-left: 10px; /* 왼쪽 여백 설정 */
+   		background-color: #6a4f3b;	    
+   		border: none; /* 테두리 제거 */
+	    padding: 6px 10px; /* 패딩 설정 */
+	    border-radius: 10px; /* 버튼 모서리를 둥글게 설정 */
+	    font-size: 22px; /* 글씨 크기 설정 */
+	    cursor: pointer; /* 마우스를 올렸을 때 커서 모양 변경 */
+	    transition: background-color 0.3s; /* 배경색 전환 효과 설정 */
+	    width: 20%;
+	    color: #f5f2e6;
+	}
+	
+	.mypage-btncss3:hover{
+		background-color: #846048;
+	}
+	
+	.mypage-btncss4:hover{
+		background-color: #846048;
+	}
+	
+	.mypage-btncss5:hover{
+		background-color: #846048;
+	}
+
+	#mypage-btncss4-container {
+	    display: flex; /* 플렉스박스를 사용하여 정렬 */
+	    justify-content: space-between;
+	    align-items: center; /* 세로 중앙 정렬 */
+	    padding: 10px 0px 10px 0px;
+	}
+
+     .cafe-item {
+         padding: 5px;
+         cursor: pointer;
+         border-bottom: 1px solid #eee;
+     }
+
+     .cafe-item.selected {
+         background-color: #e0e0e0; /* 선택된 항목 회색 배경 */
+     }
+     
+     /* 홍보 내용(content) 여러 줄 텍스트 보이기 */
+	.advertising-content {
+	    white-space: pre-line; /* 줄 바꿈 유지 */
+		border: 1px solid #eee; /* 경계 추가 */
+		padding: 5px; /* 패딩 추가 */
+	}
+    /* 0905 추가 로딩 버퍼 이미지 스타일 */
+    #loadingSpinner {
+        display: none; /* 기본적으로 숨김 */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10%; /* 화면 가로 길이의 10% */
+        z-index: 1000; /* 다른 요소 위에 표시되도록 z-index 설정 */
+    }
+    /*0909추가*/
+    /* 모달 배경 */
+	.modal {
+	    display: none; /* 기본적으로 숨김 */
+	    position: fixed; 
+	    z-index: 1; 
+	    left: 0; 
+	    top: 0; 
+	    width: 100%; 
+	    height: 100%; 
+	    overflow: auto; 
+	    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정 배경 */
+	}
+	
+	/* 모달 내용 */
+	.modal-content {
+	    background-color: #fefefe;
+	    margin: 10% auto; /* 화면 중앙으로 정렬 */
+	    padding: 20px;
+	    border: 1px solid #888;
+	    width: 40%; /* 적절한 크기로 조정 */
+	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+	    border-radius: 8px; /* 모서리 둥글게 */
+	    text-align: center; /* 중앙 정렬 */
+	}
+	
+	/* 이미지 선택 옵션 스타일 */
+	.profile-options img {
+	    width: 100px; 
+	    height: 100px; 
+	    border-radius: 50%; 
+	    cursor: pointer;
+	    margin: 10px;
+	    transition: transform 0.3s, box-shadow 0.3s;
+	}
+	
+	.inPutBox{
+		padding: 0.5em;  /* 폰트 크기에 비례한 패딩 */
+	  	width: auto;     /* 필요한 경우 너비를 자동으로 조정 */
+	    box-sizing: border-box; /* padding을 포함한 전체 크기 계산 */
+	    margin-left: 10px;
+	    border: none;
+	    border-radius: 10px;
+	}
+	
+	.textBox1{
+		padding: 0.5em;  /* 폰트 크기에 비례한 패딩 */
+	  	width: 90%;     /* 필요한 경우 너비를 자동으로 조정 */
+	    box-sizing: border-box; /* padding을 포함한 전체 크기 계산 */
+	    margin-left: 10px;
+	    border: none;
+	    border-radius: 10px;
+	    margin-top: 10px;
+	    font-family: 'TextFont', sans-serif; /* 텍스트에 폰트 적용 */
+	}
+	
+	#textarealabel{
+		display: inline-block; /* 블록 요소로 만들어서 위로 붙게 합니다. */
+	    margin-bottom: 5px; /* 아래쪽 여백을 추가합니다. */
+	    font-family: 'TextFont', sans-serif; /* 텍스트에 폰트 적용 */
+	}
+	
+	.textBox2{
+		padding: 0.5em;  /* 폰트 크기에 비례한 패딩 */
+	  	width: 90%;     /* 필요한 경우 너비를 자동으로 조정 */
+	    box-sizing: border-box; /* padding을 포함한 전체 크기 계산 */
+	    margin-left: 10px;
+	    border: none;
+	    border-radius: 10px;
+	    margin-top: 10px;
+	    height: 400px;
+	   	overflow-y: auto; /* 세로 스크롤 */
+	   	font-family: 'TextFont', sans-serif; /* 텍스트에 폰트 적용 */
+	}	
+	
+	#textarealabel{
+		margin-top: 10px;
+		vertical-align: top; /* 또는 middle, bottom 등 사용 가능 */
+	}
+	
+	/* 이미지 선택 시 확대 및 강조 효과 */
+	.profile-options img:hover {
+	    transform: scale(1.1); /* 살짝 확대 */
+	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 강조 */
+	}
+	
+	/* 닫기 버튼 스타일 */
+	.close {
+	    color: #aaa;
+	    float: right;
+	    font-size: 28px;
+	    font-weight: bold;
+	}
+	
+	.close:hover,
+	.close:focus {
+	    color: #4a3b2c;
+	    text-decoration: none;
+	    cursor: pointer;
+	}
+	
+	#mypage-toogle-addbookmarklist:hover{
+		color:#4a3b2c;
+	}
+	
+	 #mypage-toggleIcon, #mypage-likedToggleIcon {
+        font-size: 0.9em;
+        transition: transform 0.3s ease;
+    }
+
+    #mypage-toggleIcon.open, #mypage-likedToggleIcon.open  {
+        transform: rotate(180deg); /* 회전 애니메이션 */
+    }
+    
+	/* 팝업 스타일 */
+	#registerBusinessPasswordModal, #namePasswordModal, #emailPasswordModal{
+    display: none; /* 기본적으로 숨김 */
+    position: fixed; /* 고정 위치 */
+    z-index: 1000; /* 다른 요소 위에 위치 */
+    left: 50%; /* 가로 중앙에 위치 */
+    top: 50%; /* 세로 중앙에 위치 */
+    transform: translate(-50%, -50%); /* 팝업을 정확히 화면 중앙에 배치 */
+    background-color: #fff8e1; /* 밝은 크림색 배경 */
+    padding: 20px; /* 내부 여백 */
+    border-radius: 10px; /* 모서리 둥글게 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    width: 300px; /* 팝업 너비 고정 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+	}
+	
+	#advertisingForm, #likedBookmarkUl, #bookmarkUl, #registeredCafeList, #dropdown-content, #userBookmarkList, #likedBookmarkList {
+		background-color: #F2EAE4;
+		width: 50%;
+		padding: 10px;
+		justify-content: left; /* 스크롤이 가능하도록 상단 정렬 */
+    	align-items: left; /* 세로 중앙 정렬 */
+    	border-radius: 10px;
+    	text-align: left; /* 텍스트 좌측 정렬 */
+	}
+	
+	#registeredCafeList {
+		cursor: pointer;
+	}
+	
+	#dropdown-btn{
+		width: 25%;
+		height: 6%;
+		font-size: 1.1em;
+	}
+	
+	#nameTitle{
+		font-size: 35px;
+		margin-top: 10px;
+	}
+	
+	#advertisingForm{
+		margin-top : 20px;
+		display: none;
+		padding: 10px; /* 내부 여백 */
+	}
+
+	#cafeToggle, #mypage-toogle-addbookmarklist, #mypage-toogle-addbookmarklist {
+    	text-align: center; /* 텍스트 중앙 정렬 */
+		width: 50%;
+	}	
+	
+	#selectedProfileImg{
+		width: 10%;
+		height: 15%;
+		border: 3px solid #f5dfc7;
+	}
+	
+	#profile-ullist{
+		list-style: none;
+		width: 27%;
+	}
+	
+	#profileUpdateForm{
+		display: inline;
+	}
+	
+	#nameUpdateForm{
+		margin-top: 10px;
+	}
+	
+	#emailUpdateForm{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	
+	.registered-cafe-item, #listStyle{
+		margin-top: 10px;
+		border: 3px solid #f0d1ae;
+		margin-bottom: 10px;
+		list-style: none;
+		padding: 10px;
+		border-radius: 10px;
+	}
+	#mypage-strong{
+		font-size: 30px;
+	}
+	#hTitle{
+		font-size: 40px;
+	}
+	a{
+		font-size:18px;
+	}
+	
+/* 카페 이름 스타일 */
+.cafe-name {
+    font-size: 24px; /* 카페 이름 크기 */
+    color: #4A3B2C; /* 카페 이름 색상 */
+    margin-bottom: 10px;
+}
+
+/* 주소, 도로명 주소, 전화번호 스타일 */
+.cafe-address, .cafe-road-address, .cafe-phone {
+    font-size: 16px; /* 일반 텍스트 크기 */
+    color: #4A3B2C; /* 텍스트 색상 */
+    margin-bottom: 5px;
+}
+
+/* 상세 정보 링크 스타일 */
+.cafe-link {
+    color: #b18247; /* 링크 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+/* 카페 이름 스타일 */
+.cafe-name {
+    font-size: 28px; /* 카페 이름 크기 증가 */
+    color: #4A3B2C; /* 카페 이름 색상 */
+    margin-bottom: 10px;
+}
+
+/* 주소, 도로명 주소, 전화번호 스타일 */
+.cafe-address, .cafe-road-address, .cafe-phone {
+    font-size: 18px; /* 일반 텍스트 크기 증가 */
+    color: #4A3B2C; /* 텍스트 색상 */
+    margin-bottom: 5px;
+}
+
+/* 상세 정보 링크 스타일 */
+.cafe-link {
+    color: #d4b894; /* 링크 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+/* 광고 목록 스타일 */
+.advertising-container {
+    margin-top: 15px; /* 상단 여백 */
+    background-color: #f1f1f1; /* 홍보 목록 배경색 변경 */
+    padding: 15px; /* 내부 여백 추가 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+    background-color: #F2EAE4; 
+    border-top: 1px solid #c19968;
+}
+
+/* 광고 목록 제목 스타일 */
+.advertising-header {
+    font-size: 22px; /* 광고 목록 제목 크기 증가 */
+    color: #4A3B2C; /* 제목 색상 */
+}
+
+/* 광고 항목 스타일 */
+.advertising-item {
+    border-radius: 8px; /* 모서리 둥글게 */
+    padding: 10px; /* 내부 여백 */
+    margin-bottom: 10px; /* 아래쪽 여백 */
+}
+
+/* 광고 내용 스타일 */
+.advertising-description, .advertising-date {
+    font-size: 16px; /* 일반 텍스트 크기 증가 */
+    color: #4A3B2C; /* 텍스트 색상 */
+}
+
+/* 홍보 이미지 스타일 */
+.advertising-images-header {
+    font-size: 20px; /* 이미지 제목 크기 증가 */
+    color: #4A3B2C; /* 제목 색상 */
+}
+
+.advertising-image {
+    max-width: 100%; /* 이미지 너비 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    margin: 5px 0; /* 위아래 여백 */
+}
+
+/* 광고 리스트 스타일 */
+.advertising-list {
+    list-style: none; /* 리스트 스타일 제거 */
+    padding: 0; /* 패딩 제거 */
+    margin: 0; /* 마진 제거 */
+}
+
+/* 광고 항목의 플렉스 컨테이너 설정 */
+.advertising-item-container {
+    display: flex; /* 플렉스 박스 사용 */
+    justify-content: flex-start; /* 왼쪽 정렬 */
+    align-items: flex-start; /* 세로 정렬 */
+    margin-bottom: 10px; /* 아래쪽 여백 */
+}
+
+#registerBusinessPassword, #emailPassword, #namePassword{
+	border: none;
+	border-radius: 10px;
+}
+
+
+#aLingStyle{
+	color: #ba8330;
+}
+
+#advertisingForm-subcontainer{
+	border: 3px solid #f0d1ae;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+#dropdown-container{
+	border: 3px solid #f0d1ae;
+	border-radius: 10px;
+	padding: 10px;
+}
