@@ -19,4 +19,4 @@ COPY . .
 RUN ./mvnw package -DskipTests
 
 # 실행할 JAR 파일 이름 (target/*.jar에서 추출)
-CMD ["java", "-jar", "target/proj0929_proto-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/proj0929_proto-0.0.2-SNAPSHOT.jar"]
