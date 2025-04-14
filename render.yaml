@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: coffeenote
+    runtime: docker
+    plan: free
+    repo: https://github.com/alzl/CoffeeNote
+    branch: main
+    dockerfilePath: Dockerfile
